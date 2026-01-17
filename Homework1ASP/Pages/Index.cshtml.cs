@@ -3,9 +3,10 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace Homework1ASP.Pages
 {
-    public class IndexModel : PageModel
+    public class IndexModel : PageModel//Модель сторінки, живе поки формується відповідь на запит
     {
         private readonly ILogger<IndexModel> _logger;
+        public char RandomLetter { get; set; }
 
         public IndexModel(ILogger<IndexModel> logger)
         {
@@ -14,7 +15,8 @@ namespace Homework1ASP.Pages
 
         public void OnGet()
         {
-
+            Random random = new Random();//Створення екземпляру класу для генерації рандомних чисел
+            RandomLetter = (char)random.Next('A', 'Z' + 1);//Генерація випадкової літери від A до Z
         }
     }
 }
