@@ -1,0 +1,74 @@
+﻿@page
+@model Homework1ASP.Pages.Task4Model
+
+<style>
+    h1 {
+        color: darkblue;
+        text-align: center;
+    }
+
+    .container-info {
+        max-width: 650px;
+        margin: 0 auto;
+        background-color: lightcyan;
+        padding: 15px;
+        border-radius: 10px;
+        box-shadow: 0 0 8px rgba(0,0,0,0.15);
+    }
+
+    .contacts {
+        color: #333;
+    }
+
+    .work-time {
+        color: grey;
+        font-style: italic;
+        margin: 3px 0;
+    }
+
+    .list-res {
+        list-style: none;
+        padding: 0;
+        margin-top: 10px;
+    }
+
+    .list-res li {
+        background-color: lightpink;
+        font-style: italic;
+        font-weight: 500;
+        margin: 6px 0;
+        padding: 8px;
+        border-radius: 5px;
+        }
+
+    hr {
+        border: none;
+        height: 1px;
+        background-color: aqua;
+    }
+</style>
+
+<div class="container-info">
+    <h1>Ресторан "Острів"</h1>
+
+    <div class="contacts">
+        <h3>Адреса: вулиця 600-річчя, 17, Вінниця</h3>
+        <h3>Телефон: +380 67 123 45 67</h3>
+    </div>
+
+    <hr />
+
+    <p class="work-time">Щодня з 09:00 до 22:00</p>
+    <p class="work-time">Щоп’ятниці і суботи з 9:00 до 23:00</p>
+
+    <hr />
+
+    <h3>Також інші ресторани які можуть вас зацікавити:</h3>
+
+    <ul class="list-res">
+        @foreach (var restaurant in Model.Restaurant)
+        {
+            <li>@restaurant</li>
+        }
+    </ul>
+</div>
