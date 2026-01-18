@@ -1,0 +1,73 @@
+﻿@page
+@model Homework1ASP.Pages.Task5Model
+@{
+}
+
+<style>
+    .country-card {
+        background: #ffffff;
+        border-left: 9px solid #007bff;
+        border-radius: 10px;
+        padding: 20px;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.05); 
+        margin-bottom: 20px;
+
+    }
+
+    .country-name {
+        font-size: 14px;
+        font-weight: bold;
+        color: darkred;
+        margin-bottom: 10px;
+    }
+
+    .info-row {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 5px;
+        font-size: 0.95rem;
+    }
+
+    .label {
+        color: grey;
+    }
+
+    .value {
+        font-weight: 500;
+        color: black;
+    }
+</style>
+
+
+ <h1>Country 2026</h1>
+
+@foreach (var country in Model.Countries)
+{
+    <div class="country-card">
+        <div class="country-name">@country.Country</div>
+        <div class="info-row">
+            <span class="label">Capital:</span>
+            <span class="value">@country.Capital</span>
+        </div>
+        <div class="info-row">
+            <span class="label">Currency:</span>
+            <span class="value">@country.Currency</span>
+        </div>
+        <div class="info-row">
+            <span class="label">Official languages:</span>
+            <span class="value">@country.OfficialLanguages</span>
+        </div>
+        <div class="info-row">
+            <span class="label">President:</span>
+            <span class="value">@country.President</span>
+        </div>
+        <div class="info-row">
+            <span class="label">Population:</span>
+            <span class="value">@country.Population</span>
+        </div>
+    </div>
+}
+
+ 
+
+
